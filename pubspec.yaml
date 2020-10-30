@@ -65,9 +65,9 @@ flutter:
     - family: SpecialElite
       fonts:
         - asset: assets/SpecialElite-Regular.ttf
-    - family: KaronaOne
+    - family: KronaOne
       fonts:
-         - asset: assets/KaronaOne-Regular.ttf
+         - asset: assets/KronaOne-Regular.ttf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
