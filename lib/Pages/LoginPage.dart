@@ -71,9 +71,9 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
                           child: Text(
                             'Welcome',
                             style: TextStyle(
-                                fontFamily: 'SpecialElite',
-                                color: Colors.yellowAccent,
-                                fontSize: GFS().fs(60, context),
+                                fontFamily: 'KaronaOne',
+                                color: Color(0xFFbdc3c7),
+                                fontSize: GFS().fs(70, context),
                                 fontWeight: FontWeight.bold),
                           ),
                         ),

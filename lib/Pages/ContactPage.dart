@@ -8,27 +8,14 @@ class Contact extends StatefulWidget {
 }
 
 class _ContactState extends State<Contact> with TickerProviderStateMixin {
-  AnimationController _weather;
   AnimationController _animationController;
   Animation<Offset> _animation1;
   Animation<Offset> _animation2;
   Animation<Offset> _animation3;
-  Animation<Color> _weatherAnimation;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    _weather = AnimationController(duration: Duration(seconds: 2), vsync: this);
-    _weatherAnimation =
-    ColorTween(begin: Colors.yellowAccent, end: Colors.tealAccent)
-        .animate(_weather)
-      ..addListener(() {
-        setState(() {
-          if (_weather.isCompleted) {
-            _weather.repeat(reverse: true);
-          }
-        });
-      });
     _animationController =
         AnimationController(duration: Duration(seconds: 3), vsync: this);
     _animation1 = Tween<Offset>(
@@ -59,20 +46,20 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
         setState(() {});
       });
     _animationController.forward();
-
-    _weather.forward();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: _weatherAnimation.value,
-        title: Text("Contact"),
+        backgroundColor: Color(0xFF4834d4),
+        title: Text("Contact",style: TextStyle(
+          color: Colors.white,
+        ),),
       ),
       drawer: Drawer(
         child: Container(
-          color: Colors.white,
+          color: Color(0xFF7ed6df),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -105,7 +92,11 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        color: _weatherAnimation.value,
+        decoration: BoxDecoration(
+          color: Color(0xFF4834d4),
+          gradient: LinearGradient(begin:Alignment.topLeft,end:Alignment.bottomRight,colors: [ Color(0xFF4834d4),Color(0xFF686de0)])
+
+        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -114,8 +105,8 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
               child: Text(
                 "Hey...I'm Sudharsan",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontFamily: 'SpecialElite',
+                    color: Colors.white,
+                    fontFamily: 'KaronaOne',
                     fontWeight: FontWeight.bold,
                     fontSize: GFS().fs(40, context)),
               ),
@@ -125,7 +116,7 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
               child: Text(
                 "Contact Info:",
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontFamily: 'SpecialElite',
                     fontWeight: FontWeight.bold,
                     fontSize: GFS().fs(25, context)),
@@ -136,7 +127,7 @@ class _ContactState extends State<Contact> with TickerProviderStateMixin {
               child: Text(
                 "sudhar01sd@gmail.com",
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontFamily: 'SpecialElite',
                     fontWeight: FontWeight.bold,
                     fontSize: GFS().fs(25, context)),
